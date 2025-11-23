@@ -1,17 +1,29 @@
-import { mole } from "./js/mole.js"
-import { game } from "./js/game.js"
-import { timer } from "./js/countDown.js"
+import { Game } from './js/game.js';
+import { Mole } from './js/mole.js';
 
+const game = new Game('game-container', 'status');
+game.createBoard();
 
-const gameOn = new game('container', 'status');
-gameOn.createBoard();
+const mole = new Mole(game);
 
-gameOn.start()
+// Knappkontroller
+const startBtn = document.getElementById('start-btn');
+const stopBtn = document.getElementById('stop-btn');
+const difficultySelect = document.getElementById('difficulty');
 
-let startBtn = document.getElementById('startBtn'); 
-    startBtn.addEventListener('click', () => {
-        timer(); 
-    });
+startBtn.addEventListener('click', () => {
+  const speed = parseInt(difficultySelect.value);
+  mole.speed = speed;
 
-    
+  game.score = 0;
+  game.misses = 0;
+  game.updateStatus();
 
+  game.start();
+  mole.start();
+});
+
+stopBtn.addEventListener('click', () => {
+  game.stop();
+  mole.stop();
+});

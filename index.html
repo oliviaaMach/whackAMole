@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Whack A Mole</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whack-a-Mole</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <h1>Whack-a-Mole</h1>
 
-    <h1>Wrack - A - Mole</h1>
+  <!-- Statusfält -->
+  <div id="status" aria-live="polite">Hits: 0 | Misses: 0 | Time: 30s</div>
 
-    <div id="container"></div>
-    
-    <div id="countDown"></div>
-    <button id="startBtn">Start Game</button>
+  <!-- Kontroller -->
+  <div id="controls">
+    <button id="start-btn">Start</button>
+    <button id="stop-btn">Stop</button>
+  </div>
 
-    <div id="status" aria-live="polite"></div>
-    
-    <script type="module" src="script.js"></script>
+  <!-- Spelbräde -->
+  <div id="game-container"></div>
+
+  <script type="module" src="script.js"></script>
 </body>
 </html>

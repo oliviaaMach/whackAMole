@@ -19,7 +19,5 @@ const cdInterval = setInterval(() => {
     }
 });
 
-
-
 }
 
