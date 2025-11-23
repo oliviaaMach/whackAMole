@@ -1,7 +1,7 @@
 export class Mole {
   constructor(game, speed = 1000) {
     this.game = game;
-    this.speed = speed;
+    this.speed = speed; // alltid 1 sekund mellan pop-ups
     this.currentHole = null;
     this.timeoutId = null;
   }
@@ -19,9 +19,12 @@ export class Mole {
 
     const mole = document.createElement('div');
     mole.classList.add('mole');
+    mole.setAttribute('role', 'img');
+    mole.setAttribute('aria-label', 'Mullvad');
     this.currentHole.appendChild(mole);
 
-    this.timeoutId = setTimeout(() => this.popUp(), this.speed + Math.random() * 500);
+    // nästa mullvad poppar upp efter speed ms
+    this.timeoutId = setTimeout(() => this.popUp(), this.speed);
   }
 
   hide() {
