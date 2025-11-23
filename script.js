@@ -1,5 +1,5 @@
-import { Game } from '../js/game.js';
-import { Mole } from '../js/mole.js';
+import { Game } from './js/game.js';
+import { Mole } from './js/mole.js';
 
 const game = new Game('game-container', 'status');
 game.createBoard();
